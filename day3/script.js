@@ -75,8 +75,11 @@ function isDuplicate(text) {
 // 6. Add a new note
 function addNote(text, category) {
     const validCategories = ["personal", "work", "study"];
+    alert("Adding a new note: " + text + " in category: " + category);
+//im still adding the alert to see if the function is being called correctly, and it is. I will now add the checks for text length, duplicate, and category validity. 
+   
 
-    // Check text length
+// Check text length
     if (text.length < 1 || text.length > 200) {
         console.log("Note was not added: text must be 1–200 characters.");
         return false;
