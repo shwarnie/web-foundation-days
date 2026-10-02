@@ -4,6 +4,7 @@ let notes = [
   { id: 3, text: "Email the project report to Grace", category: "work" },
   { id: 4, text: "Revise JavaScript arrays", category: "study" },
   { id: 5, text: "Call mum", category: "personal" },
+  { id: 6, text: "Prepare presentation slides", category: "work" },
 ];
 
 console.log("Open the Console to see the results.");
@@ -108,6 +109,7 @@ function addNote(text, category) {
 // =========================
 
 console.log("Search for 'javascript':");
+
 console.log(searchNotes("javascript"));
 
 console.log("Search for 'JAVASCRIPT':");
