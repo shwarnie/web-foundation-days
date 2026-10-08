@@ -24,4 +24,5 @@ Overall, students and courses have a many-to-many relationship because one stude
 
 I would add an index on enrolments.student_id. This would make it faster to find all the courses taken by a particular student, especially when the database contains many enrolments.
 
-
+CREATE INDEX idx_enrolments_student_id
+ON enrolments(student_id);
