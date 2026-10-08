@@ -1,0 +1,162 @@
+# Library Books REST API
+
+This API manages books in a library. The main resource is `books`.
+
+## Endpoints
+
+### 1. List all books
+
+**Method:** `GET`
+
+**Path:** `/books`
+
+**Description:** Returns a list of all books in the library.
+
+**Success status:** `200 OK`
+
+Example request:
+
+```http
+GET /books
+```
+
+---
+
+### 2. Get one book
+
+**Method:** `GET`
+
+**Path:** `/books/{id}`
+
+**Description:** Returns the details of a single book using its ID.
+
+**Success status:** `200 OK`
+
+Example request:
+
+```http
+GET /books/15
+```
+
+---
+
+### 3. Create a book
+
+**Method:** `POST`
+
+**Path:** `/books`
+
+**Description:** Adds a new book to the library.
+
+**Example request body:**
+
+```json
+{
+  "title": "Things Fall Apart",
+  "author": "Chinua Achebe",
+  "isbn": "9780385474542"
+}
+```
+
+**Success status:** `201 Created`
+
+---
+
+### 4. Update a book
+
+**Method:** `PUT`
+
+**Path:** `/books/{id}`
+
+**Description:** Updates the details of an existing book.
+
+**Example request body:**
+
+```json
+{
+  "title": "Things Fall Apart",
+  "author": "Chinua Achebe",
+  "isbn": "9780385474542"
+}
+```
+
+**Success status:** `200 OK`
+
+---
+
+### 5. Delete a book
+
+**Method:** `DELETE`
+
+**Path:** `/books/{id}`
+
+**Description:** Deletes a book from the library.
+
+**Success status:** `204 No Content`
+
+Example request:
+
+```http
+DELETE /books/15
+```
+
+---
+
+### 6. List books by author
+
+**Method:** `GET`
+
+**Path:** `/books?author={author}`
+
+**Description:** Returns books written by the specified author using a query parameter.
+
+**Success status:** `200 OK`
+
+Example request:
+
+```http
+GET /books?author=Chinua%20Achebe
+```
+
+## Error Codes
+
+### 400 Bad Request
+
+The request is invalid or contains missing/incorrect data.
+
+Example:
+
+```http
+POST /books
+```
+
+with an invalid request body:
+
+```json
+{
+  "title": "",
+  "author": ""
+}
+```
+
+The API can return:
+
+```http
+400 Bad Request
+```
+
+### 404 Not Found
+
+The requested resource does not exist.
+
+Example:
+
+```http
+GET /books/9999
+```
+
+If book `9999` does not exist, the API returns:
+
+```http
+404 Not Found
+```
