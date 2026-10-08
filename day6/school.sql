@@ -69,3 +69,8 @@ FROM students
 LEFT JOIN enrolments ON students.id = enrolments.student_id
 WHERE enrolments.student_id IS NULL;
 
+
+UPDATE enrolments
+SET grade = 'A+'
+WHERE student_id = 2
+  AND course_id = 1;
